@@ -13,6 +13,7 @@ import Notification from './components/Notification';
 import GitHubPanel from './components/GitHubPanel';
 import LinkedInPanel from './components/LinkedInPanel';
 import UserProfileDialog from './components/UserProfileDialog';
+import InstagramPanel from './components/InstagramPanel';
 import { FILES, FileIconMap } from './constants';
 
 const App: React.FC = () => {
@@ -455,7 +456,10 @@ const App: React.FC = () => {
         {/* LinkedIn Panel when active panel is linkedin */}
         {activePanel === 'linkedin' && <LinkedInPanel />}
 
-        {isSidebarOpen && activePanel !== 'git' && activePanel !== 'linkedin' && (
+        {/* Instagram Panel when active panel is instagram */}
+        {activePanel === 'instagram' && <InstagramPanel />}
+
+        {isSidebarOpen && activePanel !== 'git' && activePanel !== 'linkedin' && activePanel !== 'instagram' && (
           <div className="w-64 flex-shrink-0 lg:static fixed z-20 h-full lg:h-auto left-12 theme-transition" style={{ backgroundColor: 'var(--bg-sidebar)' }}>
             <Sidebar activeFileId={activeFileId} onFileSelect={handleFileSelect} />
           </div>

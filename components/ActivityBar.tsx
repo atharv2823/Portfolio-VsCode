@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Files, Search, GitBranch, Play, LayoutGrid, User, Settings, MessageSquare, Linkedin } from 'lucide-react';
+import { Files, Search, GitBranch, Play, LayoutGrid, User, Settings, MessageSquare, Linkedin, Instagram } from 'lucide-react';
 
 interface Props {
   activePanel: string;
@@ -19,6 +19,8 @@ const ActivityBar: React.FC<Props> = ({ activePanel, setActivePanel, isChatOpen,
     { id: 'run', icon: <Play size={24} /> },
     { id: 'extensions', icon: <LayoutGrid size={24} /> },
     { id: 'linkedin', icon: <Linkedin size={24} /> },
+    { id: 'instagram', icon: <Instagram size={24} /> },
+
 
   ];
 
