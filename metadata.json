@@ -1,0 +1,6 @@
+
+{
+  "name": "DevCode Portfolio",
+  "description": "A high-end, interactive software developer portfolio mimicking the VS Code interface, featuring a file explorer, tabbed editor, terminal, and AI Copilot integration.",
+  "requestFramePermissions": []
+}
