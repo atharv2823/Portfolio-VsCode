@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Files, Search, GitBranch, Play, LayoutGrid, User, Settings, MessageSquare, Linkedin, Instagram } from 'lucide-react';
+import { Files, Search, GitBranch, Play, LayoutGrid, User, Settings, MessageSquare, Linkedin, Instagram, Download } from 'lucide-react';
 
 interface Props {
   activePanel: string;
@@ -9,9 +9,10 @@ interface Props {
   toggleChat: () => void;
   onUserProfileClick: () => void;
   onSettingsClick: () => void;
+  onDownloadResume: () => void;
 }
 
-const ActivityBar: React.FC<Props> = ({ activePanel, setActivePanel, isChatOpen, toggleChat, onUserProfileClick, onSettingsClick }) => {
+const ActivityBar: React.FC<Props> = ({ activePanel, setActivePanel, isChatOpen, toggleChat, onUserProfileClick, onSettingsClick, onDownloadResume }) => {
   const items = [
     { id: 'explorer', icon: <Files size={24} /> },
     { id: 'search', icon: <Search size={24} /> },
@@ -54,6 +55,13 @@ const ActivityBar: React.FC<Props> = ({ activePanel, setActivePanel, isChatOpen,
           title="Developer Profile"
         >
           <User size={24} />
+        </button>
+        <button 
+          onClick={onDownloadResume}
+          className="p-2 text-gray-500 hover:text-white"
+          title="Download Resume"
+        >
+          <Download size={24} />
         </button>
         <button 
           onClick={onSettingsClick}

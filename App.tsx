@@ -46,6 +46,24 @@ const App: React.FC = () => {
 
   const terminalRef = useRef<any>(null);
 
+  // Handle resume download
+  const handleDownloadResume = () => {
+    // Create a sample resume PDF download
+    const resumeUrl = '/resume-atharva-neware.pdf'; // This would be the actual resume file path
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Atharva_Neware_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Show notification
+    setNotification({
+      message: 'Resume download started!',
+      type: 'success'
+    });
+  };
+
   // Handle dropdown menu
   const handleDropdownClick = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu);
@@ -415,6 +433,7 @@ const App: React.FC = () => {
           toggleChat={() => setIsChatOpen(!isChatOpen)}
           onUserProfileClick={() => setIsUserProfileOpen(true)}
           onSettingsClick={() => setIsSettingsOpen(true)}
+          onDownloadResume={handleDownloadResume}
         />
 
         {/* Floating Settings Menu when active panel is settings */}
