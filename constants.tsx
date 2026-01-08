@@ -15,15 +15,17 @@ export const FILES: PortfolioFile[] = [
     name: 'about.md',
     type: 'markdown',
     icon: 'md',
-    content: `# Alex Rivera
-## Full Stack Engineer & Cloud Architect
+    content: `# Atharva Neware
+## Full Satck Developer 
 
-Passionate developer with 6+ years of experience building scalable web applications. 
+Passionate full-stack developer with 1 years of experience building end-to-end scalable web applications,from intuitive user 
+interfaces to robust backend systems.
+
 Focused on performance, clean code, and user-centric design.
 
 ### Quick Stats
-- Based in: San Francisco, CA
-- Favorite Stack: React, Node.js, PostgreSQL
+- Based in: Nagpur, India
+- Favorite Stack: Next.js, Node, Supabase.
 - Hobbies: Mechanical Keyboards, Open Source, Hiking
 
 "Code is like humor. When you have to explain it, it’s bad."`

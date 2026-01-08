@@ -5,16 +5,16 @@ const GitHubPanel: React.FC = () => {
   // Mock GitHub data - in a real app, this would come from GitHub API
   const githubData = {
     profile: {
-      name: 'Alex Rivera',
-      username: 'alex-rivera-dev',
-      avatar: 'https://github.com/images/error/alex-rivera-dev_happy.gif',
-      bio: 'Full Stack Developer & Cloud Architect',
-      location: 'San Francisco, CA',
-      company: 'TechVanguard',
-      website: 'alexrivera.dev',
-      followers: 234,
-      following: 89,
-      publicRepos: 42,
+      name: 'Atharva Neware',
+      username: 'atharv2823',
+      avatar: 'https://github.com/images/error/atharv2823_happy.gif',
+      bio: 'Full Stack Developer',
+      location: 'Nagpur, India',
+      company: 'Procohat Technologies Pvt Ltd',
+      website: 'https://www.procohat.com/',
+      followers: 9,
+      following: 13,
+      publicRepos: 64,
       joinedDate: 'January 2020'
     },
     repositories: [
@@ -106,15 +106,10 @@ const GitHubPanel: React.FC = () => {
   const renderContributionGraph = () => {
     return (
       <div className="flex gap-[2px] mt-2 flex-wrap justify-center overflow-hidden h-[68px]">
-        {Array.from({ length: 14 }).map((_, w) => (
-          <div key={w} className="flex flex-col gap-[2px]">
-            {Array.from({ length: 7 }).map((_, d) => {
-               const level = Math.random() > 0.7 ? Math.floor(Math.random() * 4) + 1 : 0;
-               const colors = ['bg-[#ebedf0]/10', 'bg-[#0e4429]', 'bg-[#006d32]', 'bg-[#26a641]', 'bg-[#39d353]'];
-               return <div key={d} className={`w-2.5 h-2.5 rounded-sm ${colors[level]}`} />
-            })}
-          </div>
-        ))}
+        <img
+  src="https://github.com/users/atharv2823/contributions"
+  alt="GitHub Contributions"
+/>
       </div>
     );
   };
@@ -133,7 +128,7 @@ const GitHubPanel: React.FC = () => {
         <div className="flex flex-col gap-4 mb-6">
           <div className="flex items-start gap-4">
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-2xl border-2 border-[var(--bg-editor)] shadow-md overflow-hidden relative">
-               <img src="https://ui-avatars.com/api/?name=Alex+Rivera&background=0D8ABC&color=fff" alt="AR" className="w-full h-full object-cover" />
+               <img src="/my-logo.jpg" alt="AR" className="w-full h-full object-cover" />
             </div>
             <div className="flex-1 min-w-0 pt-1">
               <h1 className="text-xl font-bold text-[var(--text-main)] leading-tight">{githubData.profile.name}</h1>
@@ -141,9 +136,9 @@ const GitHubPanel: React.FC = () => {
             </div>
           </div>
           
-          <button className="w-full py-1.5 px-3 bg-[#21262d] hover:bg-[#30363d] border border-[var(--border)] rounded-md text-sm font-medium text-[var(--text-main)] transition-colors shadow-sm">
+          {/* <button className="w-full py-1.5 px-3 bg-[#21262d] hover:bg-[#30363d] border border-[var(--border)] rounded-md text-sm font-medium text-[var(--text-main)] transition-colors shadow-sm">
             Edit profile
-          </button>
+          </button> */}
 
           <div className="text-sm text-[var(--text-main)] leading-relaxed">
             {githubData.profile.bio}
