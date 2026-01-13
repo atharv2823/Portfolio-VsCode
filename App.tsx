@@ -14,6 +14,8 @@ import GitHubPanel from './components/GitHubPanel';
 import LinkedInPanel from './components/LinkedInPanel';
 import UserProfileDialog from './components/UserProfileDialog';
 import InstagramPanel from './components/InstagramPanel';
+import ProjectsPanel from './components/ProjectsPanel';
+import CertificationsPanel from './components/CertificationsPanel';
 import { FILES, FileIconMap } from './constants';
 
 const App: React.FC = () => {
@@ -43,6 +45,7 @@ const App: React.FC = () => {
   const [copiedFile, setCopiedFile] = useState<string | null>(null);
   const [isUserProfileOpen, setIsUserProfileOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const terminalRef = useRef<any>(null);
 
@@ -84,7 +87,7 @@ const App: React.FC = () => {
   // Menu action handlers
   const handleMenuAction = (action: string) => {
     setActiveDropdown(null); // Close dropdown
-    
+
     switch (action) {
       case 'toggle-terminal':
         setIsTerminalOpen(prev => !prev);
@@ -114,15 +117,15 @@ const App: React.FC = () => {
 
   const handleMouseMove = (e: MouseEvent) => {
     if (!isDragging) return;
-    
+
     // Calculate new height based on mouse position from bottom of window
     const windowHeight = window.innerHeight;
     const newHeight = windowHeight - e.clientY;
-    
+
     // Set minimum and maximum heights
     const minHeight = 100;
     const maxHeight = windowHeight - 150; // Leave space for top bar and some content
-    
+
     if (newHeight >= minHeight && newHeight <= maxHeight) {
       setTerminalHeight(newHeight);
     }
@@ -172,6 +175,10 @@ const App: React.FC = () => {
     if (!openFiles.includes(id)) {
       setOpenFiles([...openFiles, id]);
     }
+    // When selecting from file explorer, always show grid view for projects
+    if (id === 'projects.json') {
+      setSelectedProject(null);
+    }
   };
 
   const handleCloseFile = (e: React.MouseEvent, id: string) => {
@@ -199,6 +206,15 @@ const App: React.FC = () => {
     } catch (err) {
       setNotification({ message: 'Failed to copy to clipboard', type: 'error' });
     }
+  };
+
+  const handleProjectSelect = (projectName: string) => {
+    setActiveFileId('projects.json');
+    if (!openFiles.includes('projects.json')) {
+      setOpenFiles([...openFiles, 'projects.json']);
+    }
+    setPreviewMode(prev => ({ ...prev, 'projects.json': true }));
+    setSelectedProject(projectName);
   };
 
   // Handle responsive behavior
@@ -235,7 +251,7 @@ const App: React.FC = () => {
         }
       }
     };
-    
+
     window.addEventListener('keydown', handleKeyboard);
     return () => window.removeEventListener('keydown', handleKeyboard);
   }, [activeFileId, openFiles, isSidebarOpen, isTerminalOpen]);
@@ -245,7 +261,7 @@ const App: React.FC = () => {
       {/* Top Bar */}
       <div className="h-8 bg-[#3c3c3c] flex items-center px-4 text-xs text-gray-400 border-b border-[#2b2b2b] flex-shrink-0 relative">
         <div className="flex gap-4 dropdown-menu">
-          <span 
+          <span
             className="hover:text-white cursor-pointer relative"
             onClick={() => handleDropdownClick('file')}
           >
@@ -270,8 +286,8 @@ const App: React.FC = () => {
               </div>
             )}
           </span>
-          
-          <span 
+
+          <span
             className="hover:text-white cursor-pointer relative"
             onClick={() => handleDropdownClick('edit')}
           >
@@ -305,8 +321,8 @@ const App: React.FC = () => {
               </div>
             )}
           </span>
-          
-          <span 
+
+          <span
             className="hover:text-white cursor-pointer relative"
             onClick={() => handleDropdownClick('selection')}
           >
@@ -331,8 +347,8 @@ const App: React.FC = () => {
               </div>
             )}
           </span>
-          
-          <span 
+
+          <span
             className="hover:text-white cursor-pointer relative"
             onClick={() => handleDropdownClick('view')}
           >
@@ -363,15 +379,15 @@ const App: React.FC = () => {
               </div>
             )}
           </span>
-          
-          <span 
+
+          <span
             className="hover:text-white cursor-pointer relative"
             onClick={() => { setIsTerminalOpen(true); terminalRef.current?.createNewTerminal(); }}
           >
             New Terminal
           </span>
-          
-          <span 
+
+          <span
             className="hover:text-white cursor-pointer relative"
             onClick={() => handleDropdownClick('go')}
           >
@@ -420,14 +436,14 @@ const App: React.FC = () => {
             className={`p-1 rounded transition-colors ${isTerminalOpen ? 'bg-[#007acc] text-white' : 'hover:bg-[#555] text-gray-400 hover:text-white'}`}
             title="Toggle Terminal"
           >
-            <SquareTerminal size={20}/>
+            <SquareTerminal size={20} />
           </button>
         </div>
       </div>
 
       <div className="flex-1 flex overflow-hidden relative">
-        <ActivityBar 
-          activePanel={activePanel} 
+        <ActivityBar
+          activePanel={activePanel}
           setActivePanel={(p) => setActivePanel(p)}
           isChatOpen={isChatOpen}
           toggleChat={() => setIsChatOpen(!isChatOpen)}
@@ -438,10 +454,10 @@ const App: React.FC = () => {
 
         {/* Floating Settings Menu when active panel is settings */}
         {activePanel === 'settings' && (
-          <SettingsMenu 
-            currentTheme={currentTheme} 
-            setTheme={setCurrentTheme} 
-            onClose={() => setActivePanel('explorer')} 
+          <SettingsMenu
+            currentTheme={currentTheme}
+            setTheme={setCurrentTheme}
+            onClose={() => setActivePanel('explorer')}
           />
         )}
 
@@ -459,15 +475,23 @@ const App: React.FC = () => {
                 </button>
               </div>
               <div className="p-4">
-                <SettingsMenu 
-                  currentTheme={currentTheme} 
-                  setTheme={setCurrentTheme} 
-                  onClose={() => setIsSettingsOpen(false)} 
+                <SettingsMenu
+                  currentTheme={currentTheme}
+                  setTheme={setCurrentTheme}
+                  onClose={() => setIsSettingsOpen(false)}
                 />
               </div>
             </div>
           </div>
         )}
+
+        {/* Projects Panel */}
+        {activePanel === 'projects' && (
+          <ProjectsPanel onSelectProject={handleProjectSelect} />
+        )}
+
+        {/* Certifications Panel */}
+        {activePanel === 'certifications' && <CertificationsPanel />}
 
         {/* GitHub Panel when active panel is git */}
         {activePanel === 'git' && <GitHubPanel />}
@@ -478,7 +502,7 @@ const App: React.FC = () => {
         {/* Instagram Panel when active panel is instagram */}
         {activePanel === 'instagram' && <InstagramPanel />}
 
-        {isSidebarOpen && activePanel !== 'git' && activePanel !== 'linkedin' && activePanel !== 'instagram' && (
+        {isSidebarOpen && activePanel !== 'git' && activePanel !== 'linkedin' && activePanel !== 'instagram' && activePanel !== 'projects' && activePanel !== 'certifications' && (
           <div className="w-64 flex-shrink-0 lg:static fixed z-20 h-full lg:h-auto left-12 theme-transition" style={{ backgroundColor: 'var(--bg-sidebar)' }}>
             <Sidebar activeFileId={activeFileId} onFileSelect={handleFileSelect} />
           </div>
@@ -494,9 +518,8 @@ const App: React.FC = () => {
                   <div
                     key={fid}
                     onClick={() => setActiveFileId(fid)}
-                    className={`flex items-center px-3 min-w-[120px] max-w-[200px] border-r border-[var(--border)] cursor-pointer text-sm gap-2 transition-colors flex-shrink-0 h-full ${
-                      activeFileId === fid ? 'bg-[var(--bg-editor)] text-white border-t-2 border-t-[var(--accent)]' : 'bg-[var(--bg-tab-inactive)] text-[var(--text-muted)] hover:bg-[var(--bg-activity)]'
-                    }`}
+                    className={`flex items-center px-3 min-w-[120px] max-w-[200px] border-r border-[var(--border)] cursor-pointer text-sm gap-2 transition-colors flex-shrink-0 h-full ${activeFileId === fid ? 'bg-[var(--bg-editor)] text-white border-t-2 border-t-[var(--accent)]' : 'bg-[var(--bg-tab-inactive)] text-[var(--text-muted)] hover:bg-[var(--bg-activity)]'
+                      }`}
                   >
                     {FileIconMap[file.icon]}
                     <span className="truncate flex-1">{file.name}</span>
@@ -506,7 +529,7 @@ const App: React.FC = () => {
               })}
             </div>
             {activeFileId && (activeFile.type === 'markdown' || activeFile.type === 'json') && (
-              <button 
+              <button
                 onClick={() => togglePreview(activeFileId)}
                 className="px-3 h-full flex items-center gap-2 hover:bg-[var(--bg-activity)] text-[var(--text-muted)] hover:text-white border-l border-[var(--border)] transition-colors"
                 title={previewMode[activeFileId] ? "Show Code" : "Open Preview"}
@@ -515,7 +538,7 @@ const App: React.FC = () => {
               </button>
             )}
             {activeFileId && (
-              <button 
+              <button
                 onClick={copyFileContent}
                 className="px-3 h-full flex items-center gap-2 hover:bg-[var(--bg-activity)] text-[var(--text-muted)] hover:text-white border-l border-[var(--border)] transition-colors"
                 title="Copy file content"
@@ -527,31 +550,31 @@ const App: React.FC = () => {
 
           <div className="flex-1 overflow-hidden relative flex flex-col">
             {activeFileId ? (
-              <div 
+              <div
                 className="overflow-y-auto bg-[var(--bg-editor)] theme-transition"
-                style={{ 
-                  height: isTerminalOpen && !isTerminalMaximized 
+                style={{
+                  height: isTerminalOpen && !isTerminalMaximized
                     ? `calc(100% - ${terminalHeight}px - 4px)` // Subtract terminal height and resizer height
-                    : isTerminalMaximized 
-                    ? '0px' // Hide editor when terminal is maximized
-                    : '100%' // Full height when no terminal
+                    : isTerminalMaximized
+                      ? '0px' // Hide editor when terminal is maximized
+                      : '100%' // Full height when no terminal
                 }}
               >
                 {previewMode[activeFileId] && activeFile.type === 'json' ? (
-                  <ProjectPreview content={activeFile.content} />
+                  <ProjectPreview content={activeFile.content} selectedProject={selectedProject} />
                 ) : (
                   <SyntaxHighlighter content={activeFile.content} type={activeFile.type} />
                 )}
               </div>
             ) : (
-              <div 
+              <div
                 className="flex items-center justify-center text-[var(--text-muted)] font-bold text-4xl opacity-10 uppercase tracking-widest"
-                style={{ 
-                  height: isTerminalOpen && !isTerminalMaximized 
-                    ? `calc(100% - ${terminalHeight}px - 4px)` 
-                    : isTerminalMaximized 
-                    ? '0px' 
-                    : '100%' 
+                style={{
+                  height: isTerminalOpen && !isTerminalMaximized
+                    ? `calc(100% - ${terminalHeight}px - 4px)`
+                    : isTerminalMaximized
+                      ? '0px'
+                      : '100%'
                 }}
               >
                 VS Code
@@ -571,15 +594,15 @@ const App: React.FC = () => {
                   <div className="absolute inset-x-0 top-0.5 h-0.5 bg-[#007acc] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <div className="absolute inset-x-0 bottom-0.5 h-0.5 bg-[#007acc] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                
+
                 {/* Terminal */}
-                <div 
+                <div
                   className="flex-shrink-0"
                   style={{ height: `${terminalHeight}px` }}
                 >
-                  <Terminal 
-                    ref={terminalRef} 
-                    onClose={() => setIsTerminalOpen(false)} 
+                  <Terminal
+                    ref={terminalRef}
+                    onClose={() => setIsTerminalOpen(false)}
                     onMaximize={() => {
                       if (isTerminalMaximized) {
                         // When restoring from maximized, keep current height
@@ -597,9 +620,9 @@ const App: React.FC = () => {
 
             {isTerminalOpen && isTerminalMaximized && (
               <div className="flex-1">
-                <Terminal 
-                  ref={terminalRef} 
-                  onClose={() => setIsTerminalOpen(false)} 
+                <Terminal
+                  ref={terminalRef}
+                  onClose={() => setIsTerminalOpen(false)}
                   onMaximize={() => setIsTerminalMaximized(false)}
                   isMaximized={isTerminalMaximized}
                 />
@@ -616,14 +639,14 @@ const App: React.FC = () => {
       </div>
 
       {notification && (
-        <Notification 
+        <Notification
           message={notification.message}
           type={notification.type}
           onClose={() => setNotification(null)}
         />
       )}
 
-      <UserProfileDialog 
+      <UserProfileDialog
         isOpen={isUserProfileOpen}
         onClose={() => setIsUserProfileOpen(false)}
       />

@@ -28,12 +28,12 @@ const Terminal = forwardRef<TerminalRef, TerminalProps>(({ onClose, onMaximize, 
       name: 'Terminal 1',
       cwd: '~',
       history: [
-        'visitor@alex-rivera-portfolio:~$ npm run build',
+        'visitor@atharva-portfolio:~$ npm run build',
         '> building site...',
         '> collecting portfolio data...',
         '> initializing Gemini AI assistant...',
         'DONE compiled successfully in 1240ms',
-        'visitor@alex-rivera-portfolio:~$ '
+        'visitor@atharva-portfolio:~$ '
       ],
       currentCommand: '',
       isActive: true
@@ -75,7 +75,7 @@ const Terminal = forwardRef<TerminalRef, TerminalProps>(({ onClose, onMaximize, 
       id: newId,
       name: `Terminal ${newId}`,
       cwd: '~',
-      history: [`visitor@alex-rivera-portfolio:~$ `],
+      history: [`visitor@atharva-portfolio:~$ `],
       currentCommand: '',
       isActive: true
     };
@@ -123,7 +123,7 @@ const Terminal = forwardRef<TerminalRef, TerminalProps>(({ onClose, onMaximize, 
       case 'clear':
         setSessions(prev => prev.map(s =>
           s.id === activeSessionId
-            ? { ...s, history: [`visitor@alex-rivera-portfolio:~${s.cwd}$ `] }
+            ? { ...s, history: [`visitor@atharva-portfolio:~${s.cwd}$ `] }
             : s
         ));
         return;
@@ -146,7 +146,7 @@ const Terminal = forwardRef<TerminalRef, TerminalProps>(({ onClose, onMaximize, 
     }
 
     newHistory.push(output);
-    newHistory.push(`visitor@alex-rivera-portfolio:~${activeSession.cwd}$ `);
+    newHistory.push(`visitor@atharva-portfolio:~${activeSession.cwd}$ `);
 
     setSessions(prev => prev.map(s =>
       s.id === activeSessionId
@@ -303,7 +303,7 @@ const Terminal = forwardRef<TerminalRef, TerminalProps>(({ onClose, onMaximize, 
 
                 {/* Current Command Input */}
                 <div className="flex items-center">
-                  <span className="text-green-500">visitor@alex-rivera-portfolio</span>
+                  <span className="text-green-500">visitor@atharva-portfolio</span>
                   <span className="text-gray-400">:</span>
                   <span className="text-blue-500">~{activeSession.cwd}</span>
                   <span className="text-green-500">$ </span>

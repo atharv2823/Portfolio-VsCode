@@ -92,6 +92,32 @@ Focused on performance, clean code, and user-centric design.
 [2023-03-22] INFO: Promoted to Tech Lead for the Core Platform team.
 [2023-11-05] WARN: Successfully mitigated massive DDoS attack on production.
 [2024-02-14] INFO: Launched 'CloudScale' project to 10k+ beta users.`
+  },
+  {
+    id: 'certifications.json',
+    name: 'certifications.json',
+    type: 'json',
+    icon: 'json',
+    content: `[
+  {
+    "name": "AWS Certified Solutions Architect",
+    "issuer": "Amazon Web Services",
+    "date": "2023-11",
+    "credentialUrl": "https://aws.amazon.com/certification/"
+  },
+  {
+    "name": "Professional Cloud Architect",
+    "issuer": "Google Cloud",
+    "date": "2023-05",
+    "credentialUrl": "https://cloud.google.com/certification"
+  },
+  {
+    "name": "Meta Frontend Developer",
+    "issuer": "Meta",
+    "date": "2022-08",
+    "credentialUrl": "https://www.coursera.org/professional-certificates/meta-front-end-developer"
+  }
+]`
   }
 ];
 

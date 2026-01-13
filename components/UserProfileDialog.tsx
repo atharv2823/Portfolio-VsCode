@@ -114,9 +114,9 @@ const UserProfileDialog: React.FC<UserProfileDialogProps> = ({ isOpen, onClose }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-[#1e1e1e] rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#3e3e42]">
+      <div className="bg-[#1e1e1e] rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-[#3e3e42]">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[#3e3e42]">
+        <div className="flex items-center justify-between p-6 border-b border-[#3e3e42] flex-shrink-0 bg-[#1e1e1e] rounded-t-lg z-10">
           <h2 className="text-2xl font-bold text-white">Developer Profile</h2>
           <button
             onClick={onClose}
@@ -126,7 +126,7 @@ const UserProfileDialog: React.FC<UserProfileDialogProps> = ({ isOpen, onClose }
           </button>
         </div>
 
-        <div className="p-6">
+        <div className="p-6 overflow-y-auto">
           {/* Personal Info */}
           <div className="bg-[#2d2d30] rounded-lg p-6 mb-6">
             <div className="flex items-start gap-6">

@@ -42,8 +42,8 @@ export class GeminiService {
         model: 'gemini-3-flash-preview',
         contents: contents as any,
         config: {
-          systemInstruction: `You are Alex Rivera's portfolio AI assistant, styled like GitHub Copilot. 
-          Use the following file contents to answer questions about Alex's skills, experience, and projects. 
+          systemInstruction: `You are Atharva's portfolio AI assistant, styled like GitHub Copilot. 
+          Use the following file contents to answer questions about Atharva's skills, experience, and projects. 
           Keep answers professional, helpful, and concise.
           
           PORTFOLIO DATA:
