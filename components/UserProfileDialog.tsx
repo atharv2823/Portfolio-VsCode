@@ -14,67 +14,58 @@ const UserProfileDialog: React.FC<UserProfileDialogProps> = ({ isOpen, onClose }
       name: "Atharva Neware",
       title: "Full Stack Developer & AI Enthusiast",
       avatar: "AN",
-      location: "Mumbai, Maharashtra, India",
+      location: "Nagpur, Maharashtra, India",
       bio: "Passionate full-stack developer with 3+ years of experience building modern web applications. Specialized in React, Node.js, and AI integration. Love creating innovative solutions that make a difference.",
-      joinDate: "January 2021",
+      joinDate: "January 2025",
       lastActive: "Active now"
     },
     contact: {
-      email: "atharva.neware@example.com",
-      phone: "+91 98765 43210",
+      email: "atharvaneware@gmail.com",
+      phone: "+91 91308 95209",
       linkedin: "linkedin.com/in/atharvaneware",
       github: "github.com/atharvaneware",
-      twitter: "@atharvaneware",
-      portfolio: "atharvaneware.dev"
+      portfolio: "atharva-portfolio-vscode.vercel.app"
     },
     education: [
       {
-        degree: "Bachelor of Technology in Computer Science",
-        school: "University of Mumbai",
-        year: "2020 - 2024",
-        grade: "First Class with Distinction",
-        description: "Specialized in Software Engineering, Data Structures, and Artificial Intelligence"
+        degree: "Master in Computer Applications (MCA)",
+        school: "G H Raisoni Amravati University",
+        year: "2023 - 2025",
+        grade: "8.56 CGPA",
+        description: "Completing the master in Computer Applications"
       },
       {
-        degree: "Higher Secondary Certificate (HSC)",
-        school: "Mumbai Junior College",
-        year: "2018 - 2020",
-        grade: "92%",
-        description: "Mathematics, Physics, Chemistry, and Computer Science"
+        degree: "Bachlores of Computer Science (BSC)",
+        school: "Shree Shivaji Science College , Nagpur",
+        year: "2020 - 2023",
+        grade: "72%",
+        description: "Electronics, Computer Science ,Mathematics"
       }
     ],
     experience: [
       {
         title: "Full Stack Developer",
-        company: "Freelance & Personal Projects",
-        duration: "2023 - Present",
-        type: "Self-Employed",
-        description: "Developing modern web applications using React, Node.js, and cloud technologies. Specializing in AI-powered applications, responsive design, and performance optimization.",
-        technologies: ["React", "Node.js", "TypeScript", "MongoDB", "AWS", "Docker"]
-      },
-      {
-        title: "Frontend Developer",
-        company: "Tech Startup",
-        duration: "2022 - 2023",
-        type: "Full-time",
-        description: "Built responsive user interfaces and implemented complex state management solutions. Collaborated with design team to create pixel-perfect implementations.",
-        technologies: ["React", "Redux", "JavaScript", "CSS", "Figma"]
-      },
-      {
-        title: "Junior Developer",
-        company: "Software Solutions Ltd",
-        duration: "2021 - 2022",
+        company: "Procohat Technologies Pvt. Ltd.",
+        duration: "2025 - Present",
         type: "Internship",
-        description: "Learned industry best practices, contributed to open-source projects, and gained experience with modern development workflows.",
-        technologies: ["HTML", "CSS", "JavaScript", "Git", "Agile"]
+        description: "Developing modern web applications using React, Node.js, and cloud technologies. Specializing in AI-powered applications, responsive design, and performance optimization.",
+        technologies: ["Next", "Node.js", "JavaScript", "Supabase", "Prisma",  "Tailwind CSS", "Git", "GitHub", "Figma"]
+      },
+      {
+        title: "Full stack Developer",
+        company: "Nxtevents",
+        duration: "2025 - present",
+        type: "Trainee",
+        description: "Built responsive user interfaces and implemented complex state management solutions. Collaborated with design team to create pixel-perfect implementations.",
+        technologies: ["Next", "Node.js", "JavaScript", "Supabase", "Prisma", "Tailwind CSS", "Git", "GitHub", "Figma"]
       }
     ],
     skills: {
-      frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Sass"],
-      backend: ["Node.js", "Express.js", "Python", "Django", "PostgreSQL", "MongoDB", "Redis"],
+      frontend: ["Next.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+      backend: ["Node.js", "Express.js", "PostgreSQL", "MongoDB"],
       cloud: ["AWS", "Vercel", "Netlify", "Docker", "Kubernetes", "CI/CD"],
-      tools: ["Git", "VS Code", "Figma", "Postman", "Jest", "Webpack"],
-      ai: ["OpenAI API", "TensorFlow.js", "Machine Learning", "NLP"]
+      tools: ["Git", "VS Code", "Figma", "Postman"],
+      ai: ["OpenAI API"]
     },
     languages: [
       { name: "English", level: "Native", proficiency: "Fluent" },
@@ -83,10 +74,10 @@ const UserProfileDialog: React.FC<UserProfileDialogProps> = ({ isOpen, onClose }
     ],
     certifications: [
       {
-        name: "AWS Certified Developer - Associate",
-        issuer: "Amazon Web Services",
-        date: "2023",
-        credentialId: "AWS-CDA-2023-001"
+        name: "Full Stack Developer",
+        issuer: "Road To Code ",
+        date: "2024",
+        credentialId: "Road To Code - Full Stack Developer"
       },
       {
         name: "Google Cloud Professional Developer",
@@ -102,14 +93,14 @@ const UserProfileDialog: React.FC<UserProfileDialogProps> = ({ isOpen, onClose }
       }
     ],
     stats: {
-      projectsCompleted: 45,
-      yearsExperience: 3,
-      technologies: 25,
-      githubRepos: 28,
+      projectsCompleted: 20,
+      yearsExperience: 1,
+      technologies: 5,
+      githubRepos: 56,
       codeCommits: 1200,
       coffeeConsumed: 500
     },
-    interests: ["AI & Machine Learning", "Open Source", "UI/UX Design", "Cloud Computing", "Mobile Development", "Game Development"]
+    interests: ["Software Development", "Web Development", "AI & Machine Learning", "Open Source", "UI/UX Design", "Cloud Computing"]
   };
 
   return (
@@ -191,10 +182,6 @@ const UserProfileDialog: React.FC<UserProfileDialogProps> = ({ isOpen, onClose }
                 <div className="flex items-center gap-3 text-gray-300">
                   <Github size={16} />
                   <span>{userData.contact.github}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Twitter size={16} className="text-blue-400" />
-                  <span>{userData.contact.twitter}</span>
                 </div>
               </div>
             </div>

@@ -24,29 +24,28 @@ const LinkedInPanel: React.FC = () => {
     ],
     education: [
       {
-        degree: "Bachelor of Technology in Computer Science",
-        school: "Rashtrasant Tukdoji Maharaj Nagpur University , Nagpur",
-        year: "2020 - 2023",
-        description: "Done the Graduation in Computer Science."
-      },
-      {
         degree: "Masters Of Computer Applications (MCA)",
         school: "GH Raisoni Amravati University , Amravati",
         year: "2023 - 2025",
         description: "Specialized in software engineering and artificial intelligence."
-      }
-    ],
-    skills: ["React.js","Next.js", "Node.js", "Python", "TypeScript", "MongoDB", "AWS", "Docker", "Git"],
+      },
+      {
+        degree: "Bachelor of Technology in Computer Science",
+        school: "Rashtrasant Tukdoji Maharaj Nagpur University , Nagpur",
+        year: "2020 - 2023",
+        description: "Done the Graduation in Computer Science."
+      }     
+    ],  
+    skills: ["Next.js", "Node.js", "Supabase", "Prisma","Git","GitHub","HTML","CSS","JavaScript","React","Tailwind CSS","Bootstrap"],
     certifications: [
-      "AWS Certified Developer",
+      "Full Stack Developer",
       "Google Cloud Professional",
       "React Developer Certification"
     ],
-    contact: {
-      email: "atharva.neware@example.com",
-      phone: "+91 98765 43210",
+    contact: { 
+      email: "atharvaneware@gmail.com",
+      phone: "+91 91308 95209",
       linkedin: "linkedin.com/in/atharvaneware",
-      github: "github.com/atharvaneware"
     }
   };
 
@@ -61,9 +60,14 @@ const LinkedInPanel: React.FC = () => {
             </div>
             <span className="text-sm font-bold text-[var(--text-main)]">LinkedIn</span>
           </div>
-          <button className="text-[var(--text-muted)] hover:text-[var(--text-main)] p-1 transition-colors">
+          <a 
+            href={`https://${profileData.contact.linkedin}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--text-muted)] hover:text-[var(--text-main)] p-1 transition-colors"
+          >
             <ExternalLink size={16} />
-          </button>
+          </a>
         </div>
 
         {/* Profile Card */}
@@ -89,12 +93,22 @@ const LinkedInPanel: React.FC = () => {
                 {profileData.location}
               </div>
               <div className="flex items-center gap-2 mt-3">
-                <button className="bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold py-1.5 px-4 rounded-full transition-colors flex items-center gap-1.5">
+                <a 
+                  href={`https://${profileData.contact.linkedin}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold py-1.5 px-4 rounded-full transition-colors flex items-center gap-1.5"
+                >
                   Connect
-                </button>
-                <button className="border border-[#0a66c2] text-[#0a66c2] hover:bg-[#0a66c2]/10 text-xs font-semibold py-1.5 px-4 rounded-full transition-colors">
+                </a>
+                <a 
+                  href={`https://${profileData.contact.linkedin}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-[#0a66c2] text-[#0a66c2] hover:bg-[#0a66c2]/10 text-xs font-semibold py-1.5 px-4 rounded-full transition-colors"
+                >
                   Message
-                </button>
+                </a>
               </div>
             </div>
           </div>

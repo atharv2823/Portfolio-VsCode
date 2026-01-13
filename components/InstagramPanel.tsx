@@ -8,15 +8,15 @@ interface InstagramPanelProps {
 const InstagramPanel: React.FC<InstagramPanelProps> = ({ onClose }) => {
   const instagramData = {
     profile: {
-      username: "@atharvaneware",
+      username: "atharv_n28",
       displayName: "Atharva Neware",
-      bio: "🚀 Full Stack Developer | AI Enthusiast | Tech Explorer\n💻 Building the future, one line of code at a time\n🌟 React | Node.js | Python | AI/ML\n📍 Mumbai, India",
+      bio: "Living My Life on my own terms 📍 Nagpur, India",
       avatar: "AN",
       verified: true,
       website: "atharvaneware.dev",
-      followers: 2847,
-      following: 892,
-      posts: 156
+      followers: 487,
+      following: 473,
+      posts: 7
     },
     stats: {
       totalLikes: 45230,
@@ -103,10 +103,10 @@ const InstagramPanel: React.FC<InstagramPanelProps> = ({ onClose }) => {
       }
     ],
     highlights: [
-      { id: 1, title: "Projects", cover: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100", count: 12 },
-      { id: 2, title: "Tech Stack", cover: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100", count: 25 },
-      { id: 3, title: "AI/ML", cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=100", count: 8 },
-      { id: 4, title: "Tutorials", cover: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=100", count: 15 }
+      { id: 1, title: "Me", cover: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100", count: 12 },
+      { id: 2, title: "Nashik", cover: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100", count: 25 },
+      { id: 3, title: "Ujjain", cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=100", count: 8 },
+      { id: 4, title: "Mumbai", cover: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=100", count: 15 }
     ]
   };
 
@@ -171,18 +171,6 @@ const InstagramPanel: React.FC<InstagramPanelProps> = ({ onClose }) => {
             <div>
               <div className="text-white font-bold">{formatNumber(instagramData.profile.following)}</div>
               <div className="text-gray-400 text-xs">Following</div>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="bg-[#2d2d30] rounded-lg p-3 text-center">
-              <div className="text-blue-400 text-lg font-bold">{instagramData.stats.engagementRate}%</div>
-              <div className="text-gray-400 text-xs">Engagement Rate</div>
-            </div>
-            <div className="bg-[#2d2d30] rounded-lg p-3 text-center">
-              <div className="text-green-400 text-lg font-bold">{formatNumber(instagramData.stats.reach)}</div>
-              <div className="text-gray-400 text-xs">Reach</div>
             </div>
           </div>
 
