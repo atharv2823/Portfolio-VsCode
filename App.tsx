@@ -16,17 +16,13 @@ import UserProfileDialog from './components/UserProfileDialog';
 import InstagramPanel from './components/InstagramPanel';
 import ProjectsPanel from './components/ProjectsPanel';
 import CertificationsPanel from './components/CertificationsPanel';
+import HtmlPlayground from './components/HtmlPlayground';
 import { FILES, FileIconMap } from './constants';
 
 const App: React.FC = () => {
-  // Initialize state from localStorage with fallbacks
-  const [activeFileId, setActiveFileId] = useState<string>(() => {
-    return localStorage.getItem('activeFileId') || FILES[0].id;
-  });
-  const [openFiles, setOpenFiles] = useState<string[]>(() => {
-    const saved = localStorage.getItem('openFiles');
-    return saved ? JSON.parse(saved) : [FILES[0].id];
-  });
+  // Initialize state - Start with HtmlPlayground (empty active file)
+  const [activeFileId, setActiveFileId] = useState<string>('');
+  const [openFiles, setOpenFiles] = useState<string[]>([]);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isTerminalOpen, setIsTerminalOpen] = useState(true);
@@ -567,18 +563,7 @@ const App: React.FC = () => {
                 )}
               </div>
             ) : (
-              <div
-                className="flex items-center justify-center text-[var(--text-muted)] font-bold text-4xl opacity-10 uppercase tracking-widest"
-                style={{
-                  height: isTerminalOpen && !isTerminalMaximized
-                    ? `calc(100% - ${terminalHeight}px - 4px)`
-                    : isTerminalMaximized
-                      ? '0px'
-                      : '100%'
-                }}
-              >
-                VS Code
-              </div>
+              <HtmlPlayground />
             )}
 
             {isTerminalOpen && !isTerminalMaximized && (

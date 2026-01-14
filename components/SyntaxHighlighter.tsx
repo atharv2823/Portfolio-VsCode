@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FileType } from '../types';
 
 interface Props {
@@ -8,7 +8,32 @@ interface Props {
 }
 
 const SyntaxHighlighter: React.FC<Props> = ({ content, type }) => {
-  const lines = content.split('\n');
+  const [displayedContent, setDisplayedContent] = useState('');
+
+  useEffect(() => {
+    setDisplayedContent('');
+    let currentIndex = 0;
+    const totalLength = content.length;
+    // Calculate chunk size to ensure animation takes roughly the same time (e.g., 0.5s - 1s) regardless of length
+    // Minimum 1 char, but for long text, move faster.
+    const chunkSize = Math.max(1, Math.ceil(totalLength / 100)); // Aim for ~100 frames
+
+    const interval = setInterval(() => {
+      if (currentIndex >= totalLength) {
+        setDisplayedContent(content);
+        clearInterval(interval);
+        return;
+      }
+
+      const nextIndex = Math.min(currentIndex + chunkSize, totalLength);
+      setDisplayedContent(content.slice(0, nextIndex));
+      currentIndex = nextIndex;
+    }, 5);
+
+    return () => clearInterval(interval);
+  }, [content]);
+
+  const lines = displayedContent.split('\n');
 
   const highlightJSON = (line: string) => {
     return line.split(/(".*?"|[:\[\]{},])/).map((part, i) => {

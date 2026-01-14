@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atharv Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        swing: {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '20%': { transform: 'rotate(15deg)' },
+                            '40%': { transform: 'rotate(-10deg)' },
+                            '60%': { transform: 'rotate(5deg)' },
+                            '80%': { transform: 'rotate(-5deg)' },
+                        },
+                        'spin-slow': {
+                            from: { transform: 'rotate(0deg)' },
+                            to: { transform: 'rotate(360deg)' }
+                        }
+                    },
+                    animation: {
+                        swing: 'swing 1s ease-in-out',
+                        'spin-slow': 'spin-slow 3s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {

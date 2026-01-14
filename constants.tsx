@@ -10,6 +10,7 @@ export const THEMES = [
 ];
 
 export const FILES: PortfolioFile[] = [
+  // use warn for yellow color and for switch compnay 
   {
     id: 'about.md',
     name: 'about.md',
@@ -70,15 +71,19 @@ Focused on performance, clean code, and user-centric design.
     content: `export const skills: Skill[] = [
   {
     category: "Frontend",
-    items: ["React", "Next.js", "Tailwind", "Framer Motion"]
+    items: [ "Next.js","React", "Tailwind", "HTML","CSS","Figma"]
   },
   {
     category: "Backend",
-    items: ["Node.js", "Go", "PostgreSQL", "GraphQL"]
+    items: ["Node.js", "Express", "PostgreSQL", "Supabase","Prisma"]
   },
   {
     category: "Infrastructure",
-    items: ["AWS", "Docker", "CI/CD", "Terraform"]
+    items: ["GitHub", "Git", "AWS", "Netlify", "Vercel"]
+  },
+  {
+  category: "Other",
+  items:["Word","Excel","Power point"]
   }
 ];`
   },
@@ -87,11 +92,10 @@ Focused on performance, clean code, and user-centric design.
     name: 'experience.log',
     type: 'log',
     icon: 'log',
-    content: `[2022-01-15] INFO: Joined 'TechVanguard' as Senior Software Engineer.
-[2022-08-10] DEBUG: Refactored legacy billing system, reducing latency by 40%.
-[2023-03-22] INFO: Promoted to Tech Lead for the Core Platform team.
-[2023-11-05] WARN: Successfully mitigated massive DDoS attack on production.
-[2024-02-14] INFO: Launched 'CloudScale' project to 10k+ beta users.`
+    content: `[2025-01-08] INFO: Joined 'Procohat Technologies Pvt Ltd' as Full Stack Developer Intern.
+[2025-02-28] DEBUG: Building the Full stack application using Next.js and Node.js.
+[2025-06-16] INFO: working as the Trainee .
+[2024-02-14] INFO: Build Nxtwknd Organizer and Nxtexpo Platform using Next.js and Node.js.`
   },
   {
     id: 'certifications.json',
@@ -100,16 +104,16 @@ Focused on performance, clean code, and user-centric design.
     icon: 'json',
     content: `[
   {
-    "name": "AWS Certified Solutions Architect",
-    "issuer": "Amazon Web Services",
-    "date": "2023-11",
-    "credentialUrl": "https://aws.amazon.com/certification/"
+    "name": "Full stack Developer ",
+    "issuer": "Road To Code (RTC)",
+    "date": "2024-07",
+    "credentialUrl": "https://www.roadtocode.org/"
   },
   {
-    "name": "Professional Cloud Architect",
-    "issuer": "Google Cloud",
-    "date": "2023-05",
-    "credentialUrl": "https://cloud.google.com/certification"
+    "name": "Node js Backend Developer",
+    "issuer": "Udemy",
+    "date": "2025-05",
+    "credentialUrl": "https://www.udemy.com/certificate/UC-1c524742-cad3-4325-bff3-a3505d009bb1/"
   },
   {
     "name": "Meta Frontend Developer",
