@@ -12,7 +12,7 @@ interface Props {
 
 const ChatSidebar: React.FC<Props> = ({ onClose }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'assistant', text: "Hello! I'm Alex's Copilot. How can I help you today?", timestamp: new Date() }
+    { role: 'assistant', text: "Hello! I'm Cortex. How can I help you today?", timestamp: new Date() }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -91,7 +91,7 @@ const ChatSidebar: React.FC<Props> = ({ onClose }) => {
                 handleSend();
               }
             }}
-            placeholder="Ask Copilot about Alex's skills..."
+            placeholder="Ask Cortex about Atharva skills..."
             className="w-full bg-[#1e1e1e] border border-[#333333] rounded-md p-3 pr-10 text-sm text-gray-300 focus:outline-none focus:border-blue-500 resize-none min-h-[100px]"
           />
           <button
