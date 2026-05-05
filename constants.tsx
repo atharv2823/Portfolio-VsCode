@@ -16,20 +16,122 @@ export const FILES: PortfolioFile[] = [
     name: 'about.md',
     type: 'markdown',
     icon: 'md',
-    content: `# Atharva Neware
-## Full Satck Developer 
+    content: `# 👨‍💻 Atharva Neware
+## Full Stack Developer • Building Modern Digital Experiences
 
-Passionate full-stack developer with 1 years of experience building end-to-end scalable web applications,from intuitive user 
-interfaces to robust backend systems.
+> Turning ideas into fast, scalable, and user-focused applications.
 
-Focused on performance, clean code, and user-centric design.
+---
 
-### Quick Stats
-- Based in: Nagpur, India
-- Favorite Stack: Next.js, Node, Supabase.
-- Hobbies: Mechanical Keyboards, Open Source, Hiking
+## 🚀 About Me
 
-"Code is like humor. When you have to explain it, it’s bad."`
+Hey there! I'm **Atharva**, a passionate full-stack developer who enjoys crafting seamless digital experiences — from beautiful frontend interfaces to powerful backend architectures.
+
+I love building products that are:
+- ⚡ Fast
+- 🎯 User-Centric
+- 🔒 Secure
+- 📈 Scalable
+- ✨ Visually Modern
+
+Whether it's developing a startup MVP, designing APIs, or optimizing UI performance, I enjoy transforming complex problems into elegant solutions.
+
+---
+
+## 🧠 Developer Philosophy
+
+\`\`\`bash
+while(alive) {
+  learn();
+  build();
+  improve();
+  repeat();
+}
+\`\`\`
+
+> "Code is like humor. When you have to explain it, it’s bad."
+
+---
+
+## ⚡ Tech Arsenal
+
+### Frontend
+- Next.js
+- React.js
+- Tailwind CSS
+- Framer Motion
+- TypeScript / JavaScript
+
+### Backend
+- Node.js
+- Express.js
+- Supabase
+- PostgreSQL
+- REST APIs
+
+### Tools & Workflow
+- Git & GitHub
+- Vercel
+- Postman
+- Figma
+- VS Code
+
+---
+
+## 📊 Quick Developer Stats
+
+| 💡 Category | 🚀 Details |
+|---|---|
+| Experience | 1+ Year Building Full Stack Apps |
+| Location | Nagpur, India 🇮🇳 |
+| Favorite Stack | Next.js + Supabase |
+| Current Focus | AI Powered Web Apps |
+| Learning | System Design & Scalable Architectures |
+| Fun Fact | I Debug Faster at Night 🌙 |
+
+---
+
+## 🛠 Currently Building
+
+- 🤖 AI Resume Builder
+- 🎉 Event Discovery Platform
+- 💬 Real-Time Chat Applications
+- 📄 Smart PDF & Resume Tools
+
+---
+
+## 🎯 What Drives Me
+
+I enjoy creating products that people genuinely use and love.
+Clean UI, smooth UX, optimized performance, and meaningful interactions are the things I care about most.
+
+Every project is an opportunity to:
+- Learn something new
+- Solve real-world problems
+- Push creative boundaries
+
+---
+
+## 🌍 Beyond Coding
+
+When I'm not coding, you'll probably find me:
+- ⌨️ Exploring Mechanical Keyboards
+- 🌲 Hiking & Exploring Nature
+- 📖 Reading About Startups & Tech
+- 🌐 Contributing to Open Source
+
+---
+
+## 📬 Let's Build Something Amazing
+
+\`\`\`ts
+const collaboration = true;
+
+if (collaboration) {
+  createSomethingAwesome();
+}
+\`\`\`
+`
   },
   {
     id: 'projects.json',
@@ -38,26 +140,26 @@ Focused on performance, clean code, and user-centric design.
     icon: 'json',
     content: `[
   {
-    "name": "CloudScale AI",
-    "description": "An enterprise-grade LLM orchestration platform.",
-    "tech": ["Next.js", "Python", "Kubernetes"],
+    "name": "Resume Craft AI",
+    "description": "An AI based Resume Builder Platform. And Also check ATS score and also get best resume templates, do mock test according to resume.",
+    "tech": ["Next.js", "Javascript","AI","Ats","React Library"],
     "status": "Deployed",
-    "demoUrl": "https://example.com/demo1",
-    "videoUrl": "https://example.com/video1"
+    "demoUrl": "https://resume-craft-4u.vercel.app/",
+    "videoUrl": "https://youtu.be/qB1c9O6Q314"
   },
   {
-    "name": "EtherFlow",
-    "description": "Real-time Ethereum gas price predictor and dashboard.",
-    "tech": ["Web3.js", "Redis", "React"],
-    "status": "Archived",
-    "demoUrl": "https://example.com/demo2",
-    "videoUrl": "https://example.com/video2"
+    "name": "Paharma Lence",
+    "description": "Real-time use for medical prescription reading and gives all information about the medicine and storage of medicine.", 
+    "tech": ["Next.js", "Gemmini", "React"],
+    "status": "Deployed",
+    "demoUrl": "https://pharma-lence.vercel.app/",
+    "videoUrl": "https://example.com/video2" 
   },
   {
-    "name": "NexusOS",
-    "description": "A browser-based operating system shell.",
-    "tech": ["TypeScript", "WebAssembly", "SCSS"],
-    "status": "Active",
+    "name": "Hotel Management System",
+    "description": "Manage Food bookings, billing for a Resturents.",
+    "tech": ["Next.js", "Javascript", "Tailwind Css"],
+    "status": "Active", 
     "demoUrl": "https://example.com/demo3",
     "videoUrl": "https://example.com/video3"
   }
@@ -92,10 +194,15 @@ Focused on performance, clean code, and user-centric design.
     name: 'experience.log',
     type: 'log',
     icon: 'log',
-    content: `[2025-01-08] INFO: Joined 'Procohat Technologies Pvt Ltd' as Full Stack Developer Intern.
-[2025-02-28] DEBUG: Building the Full stack application using Next.js and Node.js.
-[2025-06-16] INFO: working as the Trainee .
-[2024-02-14] INFO: Build Nxtwknd Organizer and Nxtexpo Platform using Next.js and Node.js.`
+    content: `[2025-01-08] INFO: Joined 'Procohat Technologies Pvt Ltd' as intern and now i am working as a Full Stack Developer . 
+[2025-02-08] DEBUG: start Building the real-time project.
+
+[2025-01-07] INFO: Joined 'Procohat Technologies Pvt Ltd' as Full Stack Developer Trainee.
+[2025-01-07] DEBUG: Building the Full stack application for the organizer panel and  ticketing panel and Listing Platform and many more.
+
+[2026-01-03] INFO: Joined 'Procohat Technologies Pvt Ltd' as Full Stack Developer.
+[2026-01-03] DEBUG: start Building the Full Stack applications and many more project.
+`
   },
   {
     id: 'certifications.json',
