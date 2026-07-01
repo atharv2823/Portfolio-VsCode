@@ -148,12 +148,28 @@ if (collaboration) {
     "videoUrl": "https://youtu.be/qB1c9O6Q314"
   },
   {
+    "name": "DummyDB",
+    "description": "Best Toole for the Developer to create the dummy data for the Project and practice.",
+    "tech": ["Next.js", "Javascript","Typescript","React Library","Tailwind Css"],
+    "status": "Deployed",
+    "demoUrl": "https://dummy-db-dev.vercel.app/",
+    "videoUrl": "https://dummy-db-dev.vercel.app/"
+  },
+  {
     "name": "Paharma Lence",
     "description": "Real-time use for medical prescription reading and gives all information about the medicine and storage of medicine.", 
-    "tech": ["Next.js", "Gemmini", "React"],
+    "tech": ["Next.js", "Gemmini", "Language Translater"],
     "status": "Deployed",
     "demoUrl": "https://pharma-lence.vercel.app/",
     "videoUrl": "https://example.com/video2" 
+  },
+  {
+    "name": "LinkLocker",
+    "description": "This tools helps to store the usefull links and give the description for the links.",
+    "tech": ["Next.js", "MongoDb", ""],
+    "status": "Deployed",
+    "demoUrl": "https://link-locker-web.vercel.app/",
+    "videoUrl": "https://link-locker-web.vercel.app/"
   },
   {
     "name": "Hotel Management System",
@@ -173,19 +189,19 @@ if (collaboration) {
     content: `export const skills: Skill[] = [
   {
     category: "Frontend",
-    items: [ "Next.js","React", "Tailwind", "HTML","CSS","Figma"]
+    items: [ "Next.js","React.js", "Tailwind", "HTML","CSS","Figma"]
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "PostgreSQL", "Supabase","Prisma"]
+    items: [ "Node.js", "Express", "PostgreSQL", "Supabase","Prisma", "Mongodb"]
   },
   {
     category: "Infrastructure",
-    items: ["GitHub", "Git", "AWS", "Netlify", "Vercel"]
+    items: [ "GitHub", "Git", "AWS", "Vercel", "Netlify"]
   },
   {
   category: "Other",
-  items:["Word","Excel","Power point"]
+  items:[ "Word","Excel","Powerpoint"]
   }
 ];`
   },
@@ -194,7 +210,7 @@ if (collaboration) {
     name: 'experience.log',
     type: 'log',
     icon: 'log',
-    content: `[2025-01-08] INFO: Joined 'Procohat Technologies Pvt Ltd' as intern and now i am working as a Full Stack Developer . 
+    content: `[2025-01-08] INFO: Joined 'Procohat Technologies Pvt Ltd' as Full Stack Developer intern. 
 [2025-02-08] DEBUG: start Building the real-time project.
 
 [2025-01-07] INFO: Joined 'Procohat Technologies Pvt Ltd' as Full Stack Developer Trainee.
